@@ -1,0 +1,459 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Resetando margens e preenchimentos, e garantindo o box-sizing consistente em todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo variáveis de cores para facilitar a manutenção do código */
+:root {
+    --color-white: #fff;
+}
+
+/* Definindo o estilo global para o corpo da página */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte principal */
+    background-color: #00050f; /* Cor de fundo escura */
+}
+
+/* Removendo a barra de rolagem, mas mantendo a funcionalidade */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo para a linha da teia, fixa na tela */
+.teia {
+    position: fixed;
+    top: 0;
+    left: 49.95%;
+    width: 2px; /* Largura fina para a linha */
+    height: 0; /* Começa com altura 0 */
+    background: linear-gradient(to bottom, #cecece, #ccc); /* Gradiente para dar efeito */
+    transform: translateX(-50%); /* Centraliza a linha */
+    z-index: 1; /* Fica acima dos outros elementos */
+}
+
+/* Estilo para a imagem do Miles Morales, fixa na tela */
+.miles-de-cabeca-para-baixo {
+    position: fixed;
+    top: 0; /* Começa acima da tela */
+    left: 50.1%; /* Centraliza a imagem */
+    transform: translateX(-50%);
+    z-index: 2; /* Fica acima da teia */
+}
+
+/* Tamanho da imagem de Miles Morales */
+.miles-de-cabeca-para-baixo img {
+    width: 100px;
+}
+
+/* Estilo para a seção da lua em pixel art */
+.lua-pixel-art {
+    display: flex;
+    flex-direction: row-reverse; /* Imagem posicionada da direita para a esquerda */
+    padding: 80px 145px 0 0; /* Espaçamento interno */
+}
+
+/* Tamanho da imagem da lua em pixel art */
+.lua-pixel-art img {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilo para o fundo de estrelas */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Fica abaixo de outros elementos */
+    pointer-events: none; /* Garante que as estrelas não interferem em outros cliques */
+}
+
+/* Estilo para cada estrela individual */
+.star {
+    position: absolute;
+    border-radius: 50%; /* Faz as estrelas redondas */
+    background-color: white;
+    opacity: 0.7; /* Opacidade para as estrelas */
+    animation: sparkle 1.5s infinite ease-in-out; /* Animação de brilho */
+}
+
+/* Animação de brilho das estrelas */
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(0.8); /* Estrela menor no início e no fim */
+        opacity: 0.7; /* Menos visível */
+    }
+    50% {
+        transform: scale(1); /* Estrela no tamanho normal */
+        opacity: 1; /* Estrela mais visível */
+    }
+}
+
+/* Estilos para diferentes tamanhos de estrelas */
+.star-small {
+    width: 2px;
+    height: 2px;
+}
+
+.star-medium {
+    width: 3px;
+    height: 3px;
+}
+
+.star-large {
+    width: 4px;
+    height: 4px;
+}
+
+.predios {
+    position: relative; /* Define um contexto para posicionamento absoluto */
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 10px;
+    perspective: 1000px; /* Adiciona a perspectiva para o efeito 3D */
+}
+
+
+.predio {
+    background-color: #ccc;
+    transition: all 0.3s ease-in-out; /* Transição suave para alterações */
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 155px 0;
+    flex-wrap: wrap;
+}
+
+.predio1 {
+    position: relative;
+    width: 200px;
+    height: 550px;
+    background-color: #3b3b3b;
+    opacity: 1; /* Torna o prédio um pouco transparente */
+    z-index: 2; /* Coloca este prédio mais à frente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+}
+
+.antena {
+    position: absolute;
+    width: 3px;
+    height: 60px;
+    background-color: #3b3b3b;
+    top: -11%;
+    left: 20%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+/* Opcional: uma bolinha no topo da antena */
+.antena::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    top: -4px;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+/* Efeito de piscar na bolinha */
+@keyframes piscar {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.antena::after {
+    animation: piscar 1s infinite alternate;
+}
+
+.predio2 {
+    width: 200px;
+    height: 400px;
+    background-color: #18191b;
+    opacity: 1; /* Torna o prédio um pouco transparente */
+    z-index: 1; /* Coloca este prédio mais à frente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra suave */
+}
+
+.predio3 {
+    width: 200px;
+    height: 450px;
+    background-color: #474747;
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.45); /* Sombra suave */
+}
+
+.predio4 {
+    position: relative;
+    width: 200px;
+    height: 550px;
+    background-color: #999999;
+    opacity: 1; /* Totalmente visível */
+    z-index: 5;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra mais forte */
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+
+    & h3 {
+        font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    & img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.exercicios {
+    position: absolute;
+    top: 0%; /* Move para cima */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza no prédio */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.predio5 {
+    width: 200px;
+    height: 390px;
+    background-color: #6d6d6d;
+    opacity: 1;
+    z-index: 4;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.55); /* Sombra forte */
+}
+
+.predio6 {
+    width: 200px;
+    height: 580px;
+    background-color: #b9b9b9;
+    opacity: 1;
+    z-index: 6;
+    box-shadow: 0 9px 18px rgba(0, 0, 0, 0.65); /* Sombra mais forte */
+}
+
+.predio6 img {
+    width: 100px;
+    height: auto;
+}
+
+.janela {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(13, 78, 139, 0.5);
+    border: 0.13rem solid rgb(54, 54, 54);
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* Oculta o texto padrão */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+
+.predio4 .janela {
+    width: 50px;
+    height: 50px;
+    border: 0.13rem solid rgb(139, 139, 139);
+    margin: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* Oculta o texto padrão */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.predio2 .janela {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(2, 18, 71, 0.5);
+    border: 0.13rem solid rgb(29, 28, 28);
+    margin: 20px;
+    box-shadow: 2px 2px 4px rgba(15, 15, 15, 0.5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* Oculta o texto padrão */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.predio4 .janela:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece a janela */
+    font-size: 12px; /* Exibe o texto */
+}
+
+.predio4 .janela::after {
+    content: attr(data-text); /* Pega o texto do data-text */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.predio4 .janela:hover::after {
+    opacity: 1; /* Exibe o texto ao passar o mouse */
+}
+
+.letreiro {
+    width: 80%;
+    background-color: #252525; /* Cor de fundo do letreiro */
+    color: #ee0a0a; /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #d8d8d8;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    top: 56%; /* Posiciona o letreiro acima da porta */
+    overflow: hidden; /* Esconde o texto que sai do limite */
+    box-shadow:  5px 5px 10px rgb(184, 184, 184)
+}
+
+/* O texto que vai se mover */
+.texto-letreiro {
+    display: inline-block;
+    white-space: nowrap; /* Impede que o texto quebre */
+    animation: movimentoLetreiro 2s linear infinite, brilho 1.5s alternate infinite; /* Animação contínua */
+}
+
+@keyframes brilho {
+    0% {
+        text-shadow: 0 0 5px red; /* Brilho inicial */
+    }
+    50% {
+        text-shadow: 0 0 20px red; /* Maior brilho no meio */
+    }
+    100% {
+        text-shadow: 0 0 5px red; /* Brilho final */
+    }
+}
+
+/* Animação do letreiro (somente o texto se move) */
+@keyframes movimentoLetreiro {
+    0% {
+        transform: translateX(250%); /* Inicia à direita da tela */
+    }
+    100% {
+        transform: translateX(-200%); /* Termina à esquerda da tela */
+    }
+}
+.porta {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    width: 50px;
+    height: 80px;
+    background-color: rgb(94, 21, 21);
+    border-radius: 5px;
+    margin: 20px auto;
+    position: relative;
+    top: 17%;
+    right: 0;
+}
+
+.macaneta {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.chao {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: absolute;
+    padding-right: 320px;
+    width: 100%;
+    height: 100px;
+    background-color: #2e2d2b;
+    z-index: 7; /* Coloca o chão atrás dos prédios */
+}
+
+.homens-aranhas img{
+    width: 200px;
+    height: auto;
+    z-index: 1;
+}
+
+.ultron img{
+    width: 450px;
+    margin-left: 75%;
+    margin-bottom: 5%;
+}
+
+.homem-de-ferro img{
+    width: 250px;
+    margin-bottom: 5%;
+}
+
+.deadpool {
+    position: absolute;
+    top: -80px; /* Ajuste conforme necessário para colocar o Deadpool em cima */
+    left: 92%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para garantir que esteja centralizado no topo do prédio */
+    z-index: 10; /* Garante que o Deadpool fique acima do prédio */
+}
+
+.deadpool img {
+    width: 140px;
+    height: auto;
+}
+
+.doutor-estranho {
+    position: absolute;
+    top: 16%; /* Ajuste conforme necessário para colocar o Deadpool em cima */
+    left: 80%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste para garantir que esteja centralizado no topo do prédio */
+    z-index: 10; /* Garante que o Deadpool fique acima do prédio */
+}
+
+.doutor-estranho img {
+    width: 250px;
+    height: auto;
+}
+
+#janela1 {
+    cursor: pointer;
+}
+
+#hulkGif {
+    position: absolute;
+    left: -50px;
+    bottom: -45%;
+    width: 500px; /* Ajuste o tamanho conforme necessário */
+    display: none;
+    z-index: 1000;
+}

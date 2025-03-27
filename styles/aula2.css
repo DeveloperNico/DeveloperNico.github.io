@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #1A1A1A;
+}
+
+.aula {
+    padding: 40px;
+}
+
+.titulo {
+    margin-bottom: 30px;
+
+    & h1 {
+        color: #fff;
+        text-align: center;
+        cursor: default;
+    }
+}
+
+.textos {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 12px;
+    gap: 20px;
+    
+    & p {
+        width: 235px;
+    }
+}
+
+.exercicios {
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+}
+
+.exercicios a {
+    background-color: #B70816;
+    text-decoration: none;
+    margin: 40px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.exercicios a:hover {
+    background-color: #890304;
+}
+
+.seta-voltar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.seta-voltar a {
+    font-size: 18px;
+    color: #fff;
+}

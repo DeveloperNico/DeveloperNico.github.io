@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75  0px;
+    color: #fff;
+}
+
+h1 {
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 500px;
+    padding: 20px 40px;
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+select {
+    padding: 0 10px;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 12px;
+    outline: none;
+    border: none;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color: #B70816;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+button:hover {
+    background-color: #890304;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.voltar-avancar {
+    display: flex;
+    justify-content: center;
+}
+
+.voltar-avancar a {
+    width: 100px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    background-color: #B70816;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.voltar-avancar a:hover {
+    background-color: #890304;
+}
+
+.seta-voltar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.seta-voltar a {
+    font-size: 18px;
+    color: #fff;
+}
+
+.erro {
+    border: 2px solid #B70816;
+}
+
+.input-group {
+    margin-bottom: 10px; /* Controla o espaçamento entre os grupos */
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 0 10px;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    margin: 0; /* Remove a margem direta do input */
+}
+
+.radio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & .masculino {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    & .feminino {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.erro-mensagem {
+    margin-top: 5px; /* Espaçamento opcional entre input e erro */
+    color: #B70816;
+    font-size: 12px;
+}
