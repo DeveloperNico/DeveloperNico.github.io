@@ -66,6 +66,7 @@ select {
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+    gap: 20px;
 }
 
 .botao-calculadora {
