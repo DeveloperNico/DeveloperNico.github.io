@@ -15,10 +15,10 @@ function calcularIdade() {
     document.getElementById('idade').focus();
 }
 
-document.getElementById("calcular").addEventListener("click", CalcularIdade);
+document.getElementById("calcular").addEventListener("click", calcularIdade);
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        CalcularIdade();
+        calcularIdade();
     }
 });

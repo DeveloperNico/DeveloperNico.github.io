@@ -15,10 +15,10 @@ function ordenarCrescente() {
     document.getElementById('numero1').focus();
 }
 
-document.getElementById("calcular").addEventListener("click", OrdenarCrescente);
+document.getElementById("calcular").addEventListener("click", ordenarCrescente);
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        OrdenarCrescente();
+        ordenarCrescente();
     }
 });

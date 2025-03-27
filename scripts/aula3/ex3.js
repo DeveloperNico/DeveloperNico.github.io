@@ -9,10 +9,10 @@ function separarLetras() {
     document.getElementById('nome').focus();
 }
 
-document.getElementById("calcular").addEventListener("click", SepararLetras);
+document.getElementById("calcular").addEventListener("click", separarLetras);
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        SepararLetras();
+        separarLetras();
     }
 });
